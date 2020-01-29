@@ -1,0 +1,14 @@
+# This allows you to set which of your scripts to run and in what order when
+# hooks are triggered.
+hooks:
+  install:
+    - host-script: install.sh
+  start:
+    - host-script: start.sh
+  config-changed:
+    - host-script: start.sh
+
+  # Upgrade by installing the new image and restarting the container
+  upgrade-charm:
+    - host-script: install.sh
+    - host-script: start.sh

@@ -1,0 +1,19 @@
+name: katharostech-com
+display-name: Katharostech.com
+summary: The Katharostech.com website.
+maintainer: Zicklag <zicklag@katharostech.com>
+description: |
+  The Katharostech.com website.
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - misc
+subordinate: false
+provides:
+  website:
+    interface: http
+resources:
+  docker-image:
+    type: file
+    filename: docker-image.tgz
+    description: The Docker image export as a .tgz ( tar gzip )
