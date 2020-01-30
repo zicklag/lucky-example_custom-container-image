@@ -1,14 +1,24 @@
 # This allows you to set which of your scripts to run and in what order when
 # hooks are triggered.
 hooks:
+  # Install start and configuration
   install:
     - host-script: install.sh
   start:
     - host-script: start.sh
+    - host-script: update-http-relation.sh
   config-changed:
     - host-script: start.sh
+    - host-script: update-http-relation.sh
+
+  # Website relation updates
+  website-relation-changed:
+    - host-script: update-http-relation.sh
+  website-relation-broken:
+    - host-script: update-http-relation.sh
 
   # Upgrade by installing the new image and restarting the container
   upgrade-charm:
     - host-script: install.sh
     - host-script: start.sh
+    - host-script: update-http-relation.sh
