@@ -11,7 +11,7 @@ lucky set-status maintenance "Configuring application"
 docker_image=$(lucky get-config docker-image)
 private_address=$(lucky private-address)
 
-# Get port from config
+# Get port from
 external_port=$(lucky get-config port)
 
 # Randomize port if requested
